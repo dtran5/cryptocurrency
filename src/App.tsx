@@ -3,7 +3,8 @@ import axios from "axios";
 //components
 import DisplayCurrency from "./components/DisplayCurrency";
 //styles
-import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
+import "./styles/App.scss";
+import { Container, InputGroup, FormControl } from "react-bootstrap";
 
 /*
   - Create interface for incoming request data from call to API
@@ -12,11 +13,11 @@ import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
 */
 interface ICurrency {
   id: string;
+  image: URL;
   name: string;
   current_price: number;
   symbol: string;
   market_cap: number;
-  total_volume: number;
   price_change_percentage_24h: number;
 }
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
   useEffect(() => {
     axios
       .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false"
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
       )
       .then((res) => {
         setCryptoCoins(res.data);
@@ -49,12 +50,13 @@ const App: React.FC = () => {
   );
 
   return (
-    <Container>
-      <h1 className="text-center">Cryptocurrency</h1>
-      <InputGroup className="mb-3">
+    <Container className="home__container-width">
+      <h1 className="text-center home__header">Cryptocurrency</h1>
+      <InputGroup className="mb-3 d-flex justify-content-center">
         <FormControl
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
+          className="home__input-background mb-3 mt-2"
+          placeholder="Search for your coins!"
+          aria-label="Search for your coins!"
           aria-describedby="basic-addon2"
           value={search}
           /*
@@ -66,18 +68,15 @@ const App: React.FC = () => {
             setSearch(e.target.value)
           }
         />
-        <InputGroup.Append>
-          <Button variant="outline-secondary">Button</Button>
-        </InputGroup.Append>
       </InputGroup>
       {coinSearch.map((crypto) => (
         <DisplayCurrency
           key={crypto.id}
+          image={crypto.image}
           name={crypto.name}
           price={crypto.current_price}
           symbol={crypto.symbol}
           marketcap={crypto.market_cap}
-          volume={crypto.total_volume}
           priceChange={crypto.price_change_percentage_24h}
         />
       ))}

@@ -1,0 +1,60 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #18191a;
+}
+
+.home {
+  &__header {
+    color: #ececec;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+  }
+
+  &__container-width {
+    max-width: 65%;
+  }
+
+  &__input-background {
+    text-align: center;
+    background: #ececec;
+    max-width: 50%;
+    border: 1px solid #ececec;
+  }
+}
+
+.display {
+  &__text {
+    color: #ececec;
+    font-size: 0.9rem;
+  }
+
+  &__size {
+    width: 35px;
+  }
+
+  &__symbol {
+    text-transform: uppercase;
+  }
+
+  &__green {
+    color: green;
+  }
+
+  &__red {
+    color: red;
+  }
+
+  &__divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}

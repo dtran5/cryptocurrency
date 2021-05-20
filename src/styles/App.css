@@ -1,0 +1,53 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #18191a;
+}
+
+.home__header {
+  color: #ececec;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.home__container-width {
+  max-width: 65%;
+}
+
+.home__input-background {
+  text-align: center;
+  background: #ececec;
+  max-width: 50%;
+  border: 1px solid #ececec;
+}
+
+.display__text {
+  color: #ececec;
+  font-size: 0.9rem;
+}
+
+.display__size {
+  width: 35px;
+}
+
+.display__symbol {
+  text-transform: uppercase;
+}
+
+.display__green {
+  color: green;
+}
+
+.display__red {
+  color: red;
+}
+
+.display__divider {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(rgba(255, 255, 255, 0.95)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+}
+/*# sourceMappingURL=App.css.map */
