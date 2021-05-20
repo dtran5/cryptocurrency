@@ -42,7 +42,7 @@ const DisplayCurrency: React.FC<Props> = ({
             </Col>
           ) : (
             <Col className="display__text display__green">
-              {priceChange.toFixed(2)}%
+              +{priceChange.toFixed(2)}%
             </Col>
           )}
           <Col md={3} className="display__text">
