@@ -13,7 +13,7 @@ import { Container, InputGroup, FormControl } from "react-bootstrap";
 */
 interface ICurrency {
   id: string;
-  image: URL;
+  image: string;
   name: string;
   current_price: number;
   symbol: string;

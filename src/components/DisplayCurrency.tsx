@@ -6,7 +6,7 @@ type Props = {
   price: number;
   symbol: string;
   marketcap: number;
-  volume: number;
+  image: string;
   priceChange: number;
 };
 
@@ -38,11 +38,11 @@ const DisplayCurrency: React.FC<Props> = ({
 
           {priceChange < 0 ? (
             <Col className="display__text display__red">
-              {priceChange.toFixed(2)}
+              {priceChange.toFixed(2)}%
             </Col>
           ) : (
             <Col className="display__text display__green">
-              {priceChange.toFixed(2)}
+              {priceChange.toFixed(2)}%
             </Col>
           )}
           <Col md={3} className="display__text">
